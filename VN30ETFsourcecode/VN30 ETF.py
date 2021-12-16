@@ -1,3 +1,10 @@
+'''
+Warning:
+There are bugs in this file, too lazy to fix : )
+Hope u guys enjoys and make changes as you want.
+'''
+
+
 #import library
 import numpy as np
 import pandas as pd
