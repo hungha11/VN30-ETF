@@ -77,8 +77,6 @@ image = Image.open('VN30ETFsourcecode/VN30visual/stonks.png')
 
 st.image(image, use_column_width=True)
 
-portfolio_size = st.number_input('Insert your portfolio size (VND)')
-st.write('Your size is ', portfolio_size)
 
 
 st.subheader('VN30 ETF')
