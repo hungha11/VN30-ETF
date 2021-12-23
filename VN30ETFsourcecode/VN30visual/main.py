@@ -98,6 +98,8 @@ st.sidebar.write(("""
 """))
 st.sidebar.write(('This is a demo using financial API from IEXCloud.'))
 st.sidebar.write(('Data is not real-time and not precise.'))
+st.sidebar.write(('Money left is quite big, due to the minimum amount for each stock are 100.'))
+
 
 
 #download csv file
