@@ -68,7 +68,7 @@ st.write("""
 # VN30 ETF from Vietnam stock market
 
 """)
-image = Image.open('stonks.png')
+image = Image.open('VN30ETFsourcecode/VN30visual/stonks.png')
 
 st.image(image, use_column_width=True)
 
