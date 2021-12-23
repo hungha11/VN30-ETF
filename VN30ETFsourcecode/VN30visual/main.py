@@ -73,10 +73,11 @@ st.sidebar.write("""
 """)
 portfolio_size = st.sidebar.number_input('Insert your portfolio size (VND)')
 st.sidebar.write('Your size is ', portfolio_size)
+
+#main screen
 image = Image.open('VN30ETFsourcecode/VN30visual/stonks.png')
 
 st.image(image, use_column_width=True)
-
 
 
 st.subheader('VN30 ETF')
@@ -85,7 +86,6 @@ for i in range(0, len(final_dataframe.index)):
     final_dataframe.loc[i, 'Weight'] =  round(final_dataframe.loc[i, 'Market Capitalization']/sum(final_dataframe['Market Capitalization']),4)
     final_dataframe.loc[i, 'Number of Shares to Buy'] = math.floor(math.floor(portfolio_size*final_dataframe.loc[i, 'Weight'] / final_dataframe.loc[i, 'Stock Price']) / 100) * 100
     final_dataframe['TOTAL MONEY (VND)'] = final_dataframe['Number of Shares to Buy'] * final_dataframe['Stock Price']
-
 
 
 st.dataframe(final_dataframe, height = 500)
