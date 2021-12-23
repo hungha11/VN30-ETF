@@ -5,7 +5,7 @@ import streamlit as st
 import math
 from PIL import Image
 
-stocks = pd.read_csv('data/VN30.csv')
+stocks = pd.read_csv("./data/VN30.csv")
 from Secret_api import IEX_CLOUD_API_TOKEN_PUBLISH
 
 symbol ='ACB-VM'
