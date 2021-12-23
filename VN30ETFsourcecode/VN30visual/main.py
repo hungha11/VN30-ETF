@@ -100,6 +100,9 @@ st.sidebar.write(('This is a demo using financial API from IEXCloud.'))
 st.sidebar.write(('Data is not real-time and not precise.'))
 st.sidebar.write(('Money left is quite big, due to the minimum amount for each stock are 100.'))
 st.sidebar.write(('Therefore, based on your NAV, the money left is different. You can use it to play high risk stock to earn excess return. '))
+st.sidebar.write(("""
+***"""))
+st.sidebar.write(('My name is Quoc Hung.\nContact via email: hungha1412@gmail.com or qhung9621@gmail.com'))
 
 
 
