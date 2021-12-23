@@ -4,6 +4,8 @@ import requests
 import streamlit as st
 import math
 from PIL import Image
+import base64
+import matplotlib.pyplot as plt
 
 stocks = pd.read_csv("VN30ETFsourcecode/VN30visual/VN30.csv")
 from Secret_api import IEX_CLOUD_API_TOKEN_PUBLISH
@@ -64,23 +66,20 @@ for symbol_string in symbol_strings:
 
 
 #bring these lines to web
-st.write("""
+#sidebar
+st.sidebar.write("""
 # VN30 ETF from Vietnam stock market
 
 """)
+portfolio_size = st.sidebar.number_input('Insert your portfolio size (VND)')
+st.sidebar.write('Your size is ', portfolio_size)
 image = Image.open('VN30ETFsourcecode/VN30visual/stonks.png')
 
 st.image(image, use_column_width=True)
 
-st.write("""
-***
-""")
 portfolio_size = st.number_input('Insert your portfolio size (VND)')
 st.write('Your size is ', portfolio_size)
 
-st.write("""
-***
-""")
 
 st.subheader('VN30 ETF')
 
@@ -91,13 +90,35 @@ for i in range(0, len(final_dataframe.index)):
 
 
 
-
-st.write(final_dataframe)
+st.dataframe(final_dataframe, height = 500)
 Money_use = sum(final_dataframe['TOTAL MONEY (VND)'])
 Money_left = portfolio_size - Money_use
-st.write('Money use: '+ str(Money_use))
-st.write('Money left: '+ str(Money_left))
+st.sidebar.write('Money use: '+ str(Money_use))
+st.sidebar.write('Money left: '+ str(Money_left))
+st.sidebar.write(("""
+***
+"""))
+st.sidebar.write(('This is a demo using financial API from IEXCloud.'))
+st.sidebar.write(('Data is not real-time and not precise.'))
 
+
+#download csv file
+def filedownload(df):
+    csv = df.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()  # strings <-> bytes conversions
+    href = f'<a href="data:file/csv;base64,{b64}" download="VN30ETF.csv">Download CSV File</a>'
+    return href
+
+st.markdown(filedownload(final_dataframe), unsafe_allow_html=True)
+
+
+if st.button('Show chart'):
+    labels = list(final_dataframe.Ticker)
+    sizes = list(final_dataframe.Weight)
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, labels=labels, startangle = 90)
+    ax1.axis('equal')
+    st.pyplot(fig1)
 
 
 
