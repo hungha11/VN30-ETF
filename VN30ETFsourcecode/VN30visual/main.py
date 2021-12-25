@@ -90,7 +90,7 @@ for i in range(0, len(final_dataframe.index)):
 
 st.dataframe(final_dataframe, height = 500)
 Money_use = sum(final_dataframe['TOTAL MONEY (VND)'])
-Money_left = portfolio_size - Money_use
+Money_left = round((portfolio_size - Money_use),2)
 st.sidebar.write('Money use: '+ str(Money_use))
 st.sidebar.write('Money left: '+ str(Money_left))
 st.sidebar.write(("""
