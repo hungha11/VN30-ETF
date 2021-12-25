@@ -102,7 +102,7 @@ st.sidebar.write(('Money left is quite big, due to the minimum amount for each s
 st.sidebar.write(('Therefore, based on your NAV, the money left is different. You can use it to play high risk stock to earn excess return. '))
 st.sidebar.write(("""
 ***"""))
-st.sidebar.write(('My name is Quoc Hung.\nContact via email: hungha1412@gmail.com or, qhung9621@gmail.com'))
+st.sidebar.write(('My name is Quoc Hung.\nContact:'))
 st.sidebar.markdown("""
 * **Gmail:** hungha1412@gmail.com or, qhung9621@gmail.com
 * **Linkedin Profile:** [Ha Quoc Hung](https://www.linkedin.com/in/quốc-hùng-hà-6b192b222/detail/recent-activity/)
