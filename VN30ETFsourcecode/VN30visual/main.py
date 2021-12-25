@@ -103,6 +103,9 @@ st.sidebar.write(('Therefore, based on your NAV, the money left is different. Yo
 st.sidebar.write(("""
 ***"""))
 st.sidebar.write(('My name is Quoc Hung.\nContact via email: hungha1412@gmail.com or, qhung9621@gmail.com'))
+st.sidebar.markdown("""
+* **Linkedin Profile:** [Ha Quoc Hung](https://www.linkedin.com/in/quốc-hùng-hà-6b192b222/detail/recent-activity/)
+""")
 
 
 
