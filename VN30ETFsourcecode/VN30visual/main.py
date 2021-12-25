@@ -117,6 +117,7 @@ def filedownload(df):
 st.markdown(filedownload(final_dataframe), unsafe_allow_html=True)
 
 
+
 if st.button('Show chart'):
     st.header('Weight')
     labels = list(final_dataframe.Ticker)
